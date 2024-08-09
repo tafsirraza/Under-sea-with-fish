@@ -1,0 +1,186 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #001f3f;
+    font-family: Arial, sans-serif;
+}
+
+/* Ocean Container */
+.ocean-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #003366, #00264d);
+}
+
+/* Realistic Water Animation */
+.water {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    animation: waterMove 30s infinite linear;
+    opacity: 0.8;
+}
+
+@keyframes waterMove {
+    from { background-position: 0 0; }
+    to { background-position: 100% 0; }
+}
+
+/* Realistic Fish Styling */
+.fish {
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    animation: fishSwim 15s infinite linear;
+    transition: transform 0.2s ease-out;
+}
+
+.fish-body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ffcc99, #ff9966);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fish Tail */
+.fish::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 40px;
+    height: 60px;
+    background: linear-gradient(to right, #ff9966, #ffcc99);
+    border-radius: 50%;
+    transform: rotate(45deg) translateY(-50%);
+    box-shadow: inset -10px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Fish Fins */
+.fish-fins {
+    position: absolute;
+    top: 30%;
+    right: -20px;
+    width: 30px;
+    height: 20px;
+    background: radial-gradient(circle at 50% 50%, #ff9966, #ffcc99);
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Fish Eye */
+.fish-eye {
+    position: absolute;
+    top: 20px;
+    left: 70px;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Fish Specific Styles */
+.fish1 {
+    top: 20%;
+    left: 10%;
+}
+
+.fish2 {
+    top: 50%;
+    left: 70%;
+    background: linear-gradient(to right, #00cc99, #007f66);
+    animation-duration: 18s;
+    animation-delay: 3s;
+}
+
+.fish3 {
+    top: 75%;
+    left: 40%;
+    background: linear-gradient(to right, #ffff99, #ffcc00);
+    animation-duration: 20s;
+    animation-delay: 6s;
+}
+
+.fish4 {
+    top: 40%;
+    left: 85%;
+    background: linear-gradient(to right, #3399ff, #003366);
+    animation-duration: 17s;
+    animation-delay: 2s;
+}
+
+@keyframes fishSwim {
+    0% { transform: translateX(0) translateY(0); }
+    50% { transform: translateX(120px) translateY(-10px); }
+    100% { transform: translateX(0) translateY(0); }
+}
+
+/* Fish Hover Effect */
+.fish:hover {
+    transform: scaleX(-1) translateX(-10px);
+    animation-play-state: paused;
+}
+
+/* Undersea Grasses (Seaweed) */
+.seaweed {
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 150px;
+    background: linear-gradient(to top, #006600, #00cc66);
+    border-radius: 50% 50% 0 0;
+    animation: seaweedMove 10s infinite ease-in-out;
+}
+
+@keyframes seaweedMove {
+    0%, 100% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+}
+
+.seaweed1 { left: 10%; }
+.seaweed2 { left: 50%; }
+.seaweed3 { left: 90%; }
+
+/* Starfish */
+.starfish {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle at 50% 50%, #ffcc00 10%, #cc6600 90%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.starfish1 { bottom: 30px; left: 20%; }
+.starfish2 { bottom: 20px; right: 15%; }
+
+/* Jellyfish */
+.jellyfish {
+    position: absolute;
+    width: 50px;
+    height: 80px;
+    background: radial-gradient(circle at 50% 50%, #ffcccc 40%, #ff6699 80%);
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 0 20px rgba(255, 102, 153, 0.5);
+    animation: jellyMove 6s infinite ease-in-out;
+}
+
+.jellyfish1 { top: 20%; left: 30%; }
+.jellyfish2 { top: 50%; right: 25%; }
+
+@keyframes jellyMove {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
